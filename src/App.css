@@ -1,38 +1,87 @@
-.App {
-  text-align: center;
+* {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	text-decoration: none;
+	box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 100vw;
+	min-height: 100vh;
+	background-color: #141414;
+	color: #F2F2F2;
+	font-family: Arial;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body::-webkit-scrollbar {
+	display: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#react-wavy-transitions__container {
+	position: absolute;
 }
 
-.App-link {
-  color: #61dafb;
+.react-wavy-transitions__wavy-link {
+	cursor: pointer;
+	font-size: 12px;
+	text-transform: uppercase;
+	background-color: #0A0A0A;
+	display: inline-block;
+	padding: 7px;
+	transition: all .3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.react-wavy-transitions__wavy-link:hover {
+	background-color: #199EFF;
+}
+
+.movies-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 5vw 3vw;
+	row-gap: 5vw;
+}
+
+.movies-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-start;
+	width: 13vw;
+}
+
+.movies-item img {
+	width: 100%;
+}
+
+.movies-item .movies-item-data {
+	width: 100%;
+	margin-top: 10%;
+}
+
+.movies-item .movies-item-data .movies-item-data_title {
+	width: 90%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-weight: bolder;
+}
+
+.movies-item .movies-item-data .movies-item-data_rate {
+	margin: 4% 0 14% 0;
+	color: gray;
+	font-size: 14px;
+}
+
+.movies-item .movies-item-data .movies-item-data_rate span {
+	color: #199EFF;
+}
+
+.movie_details_container-back:hover {
+	background-color: #FFFF00 !important;
 }
