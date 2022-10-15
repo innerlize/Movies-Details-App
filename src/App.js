@@ -8,9 +8,7 @@ function App() {
 
 
   return (
-    <div className='movies-container'>
-      <Router />
-    </div>
+    <Router />
   );
 }
 

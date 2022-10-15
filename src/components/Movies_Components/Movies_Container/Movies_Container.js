@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { MutatingDots } from  'react-loader-spinner';
+import { MutatingDots } from 'react-loader-spinner';
 import axios from "axios";
 import MovieItem from './Movie_Item/Movie_Item.js';
 
@@ -28,7 +27,7 @@ function MoviesContainer() {
   useEffect(() => {
     setTimeout(() => {
       getMovies();
-    }, 800)
+    }, 1000)
   }, [])
 
 
@@ -47,19 +46,20 @@ function MoviesContainer() {
         visible={true}
       />
     )
-  } else {
-    return (
-      <div className='movies-container'>
-        {
-          movies.map(movie => {
-            return(
-              <MovieItem movie={movie} key={movie.id} />
-            )
-          })
-        }
-      </div>
-    )
   }
+
+
+  return (
+    <section className='movies-container'>
+      {
+        movies.map(movie => {
+          return(
+            <MovieItem movie={movie} key={movie.id} />
+          )
+        })
+      }
+    </section>
+  )
 }
 
 

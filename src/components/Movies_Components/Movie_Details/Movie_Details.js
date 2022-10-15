@@ -29,7 +29,7 @@ function MovieDetails() {
 	useEffect(() => {
 		setTimeout(() => {
 			getMovie(movieId);
-		}, 800)
+		}, 1000)
 	}, [movieId])
 
 
@@ -50,10 +50,33 @@ function MovieDetails() {
 	} else {
 		return(
 			<div className='movie_details_container'>
-				<p>{movie.title}</p>
-				<img src={'https://image.tmdb.org/t/p/original/' + movie.poster_path} width='50vw' />
-				<p>{console.log(movie)}</p>
-				<WavyLink className='movie_details_container-back' to='/' color='#199EFF'> Volver </WavyLink>
+				<div className='movie_details_container-image'>
+					<img src={'https://image.tmdb.org/t/p/original/' + movie.poster_path} width='50vw' />
+				</div>
+				<div className='movie_details_container-details'>
+					<h3 className='movie_details_container-title'>{movie.title}</h3>
+					<h5 className='movie_details_container-tagline'>"{movie.tagline}"</h5>
+					<p className='movie_details_container-overview'>{movie.overview}</p>
+					<div className='movie_details_container-data'>
+						<div className='movie_details_container-data_row row1'>
+							<p>Released: {movie.release_date} {console.log(movie)}</p>
+							<p>Director: Messi</p>
+							<p>Genre: {movie.genres.map(g => `${g.name}, `)}</p>
+							<p>Status: {movie.status}</p>
+							<p>Language: {movie.spoken_languages.map(l => `${l.name}, `)}</p>
+						</div>
+						<div className='movie_details_container-data_row row2'>
+							<p>Runtime: {Math.floor(movie.runtime/60)}h {Math.floor(movie.runtime%60)}m</p>
+							{movie.budget ? <p>Budget: ${movie.budget.toLocaleString('en-US')}</p> : null}
+							{movie.revenue ? <p>Revenue: ${movie.revenue.toLocaleString('en-US')}</p> : null}
+							<p>Production: {movie.production_companies.map(c => `${c.name}, `)}</p>
+						</div>
+					</div>
+					<div className='movie_details_container-links'>
+						<a href={movie.homepage} target='_blank'>{movie.homepage ? 'Official website' : null}</a>
+						<WavyLink className='movie_details_container-back' to='/' color='#199EFF'> Volver </WavyLink>
+					</div>					
+				</div>
 			</div>
 		)
 	}

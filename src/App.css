@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Red+Hat+Display:wght@300;400;500;600;700;800;900&family=Red+Hat+Text:wght@300;400&display=swap');
+
 * {
 	margin: 0;
 	padding: 0;
@@ -12,7 +14,7 @@ body {
 	align-items: center;
 	min-width: 100vw;
 	min-height: 100vh;
-	background-color: #141414;
+	background-color: #0A0A0A;
 	color: #F2F2F2;
 	font-family: Arial;
 }
@@ -42,9 +44,10 @@ body::-webkit-scrollbar {
 .movies-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: center;
 	padding: 5vw 3vw;
-	row-gap: 5vw;
+	gap: 8px;
+	row-gap: 6vw;
 }
 
 .movies-item {
@@ -80,8 +83,4 @@ body::-webkit-scrollbar {
 
 .movies-item .movies-item-data .movies-item-data_rate span {
 	color: #199EFF;
-}
-
-.movie_details_container-back:hover {
-	background-color: #FFFF00 !important;
 }
