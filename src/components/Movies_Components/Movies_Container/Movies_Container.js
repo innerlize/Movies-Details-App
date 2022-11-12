@@ -15,6 +15,7 @@ function MoviesContainer() {
 
       let moviesData = res.data.results;
       
+      console.log(res)
       setMovies(moviesData);
     }
 

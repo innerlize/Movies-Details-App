@@ -55,7 +55,7 @@ function MovieDetails() {
 				</div>
 				<div className='movie_details_container-details'>
 					<h3 className='movie_details_container-title'>{movie.title}</h3>
-					<h5 className='movie_details_container-tagline'>"{movie.tagline}"</h5>
+					<h5 className='movie_details_container-tagline'>{movie.tagline ? `"${movie.tagline}"` : null}</h5>
 					<p className='movie_details_container-overview'>{movie.overview}</p>
 					<div className='movie_details_container-data'>
 						<div className='movie_details_container-data_row row1'>
